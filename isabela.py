@@ -7,6 +7,8 @@ cor = ["azul", "purpura", "turquesa", "cinza", "amarelo", "marinho", "ouro", "pr
 # sortear uma palavra
 sorteio = random.choice(cor)
 #esconder a palavra sorteada
+
+
 sorteioEscondido = sorteio.replace(sorteio, '_' * len(sorteio))
 #contador de chances
 contador = 0
@@ -29,21 +31,19 @@ while "_" in sorteioEscondido and contador < 6:
     if len(chute) == 1 and chute.isalpha():
         
         if chute not in letrasCertas and chute not in letrasErradas:
-                # ... (seu código existente)
-            for i in range(len(sorteio)):
-
-                if sorteio[i] == chute:
+                
+            for i in (sorteio):
+                #contador2 = 0
+                if i == chute:
                     sorteioEscondido = sorteioEscondido [:i] + chute + sorteioEscondido [i+1:]
                     letrasCertas.append(chute)
 
-                else:
-                        #armazenar as letras já chutadas para perder chances
-                        contador += 1
-                        letrasErradas.append(chute)
         else:
-                print("Você já chutou essa letra.")
+                        #armazenar as letras já chutadas para perder chances
+            contador += 1
+            letrasErradas.append(chute)
     else:
-        print("Por favor, digite apenas uma letra.")
+        print("Você já chutou essa letra.")
  
 if contador >= 6:
     print ("infelismente Alex foi enforcado")
