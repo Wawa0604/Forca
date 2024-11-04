@@ -11,39 +11,46 @@ sorteioEscondido = sorteio.replace(sorteio, '_' * len(sorteio))
 #contador de chances
 contador = 0
 #lista de letras ja chutadas
-letrasJaChutadas = []
-
+letrasErradas = []
+#lista das letras certas já chutadas para avisar se já chutou antes 
+letrasCertas = []
 #verificar se os chutes são letras e apenas uma
-while True:
 
     #enquanto a palavra estiver com letras escondidas
-    while "_" in sorteioEscondido:
+while "_" in sorteioEscondido and contador < 6:
 
         # mostrar as letras escondidas
-        print (sorteioEscondido)
-
+    print (sorteioEscondido)
+    print ("Seus chutes anteriores:", letrasErradas) #printar as q ja foram
+    print(contador)#linha para organização
         #imput para os chutes
-        chute = input ("Chute uma letra ")
-
-        #verificar se os chutes são letras e apenas uma
-        if len(chute) == 1 and chute.isalpha():
-
-            #armazenar as letras já chutadas para perder chances
-            #printar as q ja foram
+    chute = input ("Chute uma letra ")
+        
+    if len(chute) == 1 and chute.isalpha():
+        
+        if chute not in letrasCertas and chute not in letrasErradas:
+                # ... (seu código existente)
             for i in range(len(sorteio)):
+
                 if sorteio[i] == chute:
                     sorteioEscondido = sorteioEscondido [:i] + chute + sorteioEscondido [i+1:]
+                    letrasCertas.append(chute)
 
-                #mensagem de aviso caso uma letra ja tenha ido 
-                #não computar ela na contagem de vidas
-                #Mensagem para quando der mais chutes q permitido
-                    if chute == sorteio:
-                        break
+                else:
+                        #armazenar as letras já chutadas para perder chances
+                        contador += 1
+                        letrasErradas.append(chute)
         else:
-            print ("Por favor insira UMA LETRA")
-    break
-    
-print ("Você acertou!!!")
+                print("Você já chutou essa letra.")
+    else:
+        print("Por favor, digite apenas uma letra.")
+ 
+if contador >= 6:
+    print ("infelismente Alex foi enforcado")
+
+else:
+    print ("Você acertou!!!")
+   
    
 # coisas para fazer ainda:
 
@@ -53,3 +60,30 @@ print ("Você acertou!!!")
 #  'vc é muito ruim, morreu aqui, bora almentar os acessórios?'
 
 #para enviar o jogo, subir no git um sorce code, um relese para quem não quiser baixar e um read me esplicando o jogo 
+       #verificar se os chutes são letras e apenas uma
+
+'''
+        if len(chute) == 1 and chute.isalpha():
+
+            #armazenar as letras já chutadas para perder chances
+            #printar as q ja foram
+            for i in range(len(sorteio)):
+                if sorteio[i] == chute:
+                    sorteioEscondido = sorteioEscondido [:i] + chute + sorteioEscondido [i+1:]
+                    letrasCertasJaChutadas.append(chute)
+
+                elif sorteio[i] != chute:
+                    contador += 1
+                    letrasErradasJaChutadas.append(chute)
+
+                elif chute in letrasCertasJaChutadas or letrasErradasJaChutadas:
+                    print("Você já chutou essa letra")
+      
+                #mensagem de aviso caso uma letra ja tenha ido 
+                #não computar ela na contagem de vidas
+                #Mensagem para quando der mais chutes q permitido
+                    if chute == sorteio:
+                      break
+            else:
+                    print ("Por favor insira UMA LETRA")
+     '''

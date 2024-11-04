@@ -47,6 +47,7 @@ while True:
                 if cor_sorteada[i] == chute:
                     sorteioEscondido = sorteioEscondido [:i] + chute + sorteioEscondido [i+1:]
 
+
                 #mensagem de aviso caso uma letra ja tenha ido 
                 #não computar ela na contagem de vidas
                 #Mensagem para quando der mais chutes q permitido
