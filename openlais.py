@@ -18,8 +18,8 @@ def sorteaiaCor(cor):
 # Sortear um nome aleatório
 cor_sorteada= random.choice(lista)
 
-# Exibir o nome sorteado
-print(f'O nome sorteado foi: {cor_sorteada}')
+# Exibir o nome sorteado (só pra teste)
+#print(f'O nome sorteado foi: {cor_sorteada}')
 
 #Parte Isa:
 sorteioEscondido = cor_sorteada.replace(cor_sorteada, '_' * len(cor_sorteada))
@@ -34,7 +34,6 @@ while True:
 
     #enquanto a palavra estiver com letras escondidas
     while "_" in sorteioEscondido:
-
         # mostrar as letras escondidas
         print (sorteioEscondido)
         # print ("Seus chutes anteriores:", letrasErradas) #printar as q ja foram
