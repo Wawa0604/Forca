@@ -72,7 +72,7 @@ def abrirJogoCores():
 		if chute not in sorteio:
 			contador -=1
 			tentativa.config(text=f"Você tem {contador} chances de errar a letra")
-			letras = ''.join(letrasErradas)
+			letras = letrasErradas.append()
 		
 		#Se acabar as tentativas:
 		if contador == 0:
