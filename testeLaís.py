@@ -1,6 +1,20 @@
 import tkinter as tk  #importa tudo da biblioteca
 import random
 
+
+# Criação de listas importando dados dos arquivos de texto
+with open ('cores.txt', 'r') as reader:
+
+	cor = reader.readlines()
+
+with open ('frutas.txt', 'r') as reader:
+
+	frutas = reader.readlines()
+
+with open ('objetos.txt', 'r') as reader:
+
+	objetos = reader.readlines()
+
 #Configuração da janela INICIAL
 janela = tk.Tk()   #incia tkinter: exibe janela
 janela.title("Jogo da Forca")   #Define o título da janela 
@@ -39,9 +53,10 @@ def abrirJogoCores():
 	janela2.config(bg='#000000')
 	janela2.iconbitmap("favicon.ico")
 
+
+    	#print (lista)
+
 	#Sortear palavra
-	cor = ["azul", "purpura", "turquesa", "cinza", "amarelo", "marinho", "ouro", "prata", "bronze", "coral", "vermelho", "laranja", "marrom", "roxo", "verde", "preto", "rosa", "branco"]
-	#cor = open ('cores.txt')
 	sorteio = random.choice(cor)
 	sorteioEscondido = '_' * len(sorteio)
 	contador=10
@@ -119,8 +134,7 @@ def abrirJogoFrutas():
 	janela3.iconbitmap("favicon.ico")
 
 	#Sortear palavra
-	cor = open ('frutas.txt')
-	sorteio = random.choice(cor)
+	sorteio = random.choice(frutas)
 	sorteioEscondido = '_ ' * len(sorteio)
 
 	#Area do resultado final
@@ -162,7 +176,6 @@ def abrirJogoObjetos():
 	janela4.iconbitmap("favicon.ico")
 
 	#Sortear palavra
-	objetos = open ("objetos.txt")
 	sorteio = random.choice(objetos)
 	sorteioEscondido = '_ ' * len(sorteio)
 
