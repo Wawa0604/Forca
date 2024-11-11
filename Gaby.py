@@ -109,6 +109,7 @@ def abrirJogoCores():
 	orientação=tk.Label(janela2, text="Chute uma letra no input abaixo e aperte no botão chutar para validar" , fg="white", bg="black", font= ("Arial", 14))
 	orientação.place(relx=0.5,rely=0.15, anchor="center")
 	
+	#Lacunas para a palavra:
 	palavra=tk.Label(janela2,text=sorteioEscondido, fg="purple", bg="black", font= ("Arial Black", 30))
 	palavra.place(relx=0.5, rely=0.45, anchor="center")
 
