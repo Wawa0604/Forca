@@ -72,7 +72,8 @@ def abrirJogoCores():
 		if chute not in sorteio:
 			contador -=1
 			tentativa.config(text=f"Você tem {contador} chances de errar a letra")
-			letras = letrasErradas.append()
+			letrasErradas.insert (1, chute)
+			
 		
 		#Se acabar as tentativas:
 		if contador == 0:
@@ -92,7 +93,7 @@ def abrirJogoCores():
 	palavra.place(relx=0.5, rely=0.45, anchor="center")
 
 	#Onde ficam as letras erradas
-	letras=tk.Label(janela2, text="Letras erradas:", fg="white", bg="black", font=("Arial", 14))
+	letras=tk.Label(janela2, text= f"Letras erradas: {letrasErradas}",  fg="white", bg="black", font=("Arial", 14))
 	letras.place(relx=0.5, rely=0.7, anchor="center")
 
 	#Onde conta as tentativas:
