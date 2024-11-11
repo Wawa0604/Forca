@@ -63,8 +63,9 @@ def abrirJogoCores():
 
 		#Se acertar:
 		if sorteioEscondido==sorteio:
-			tentativa.config(text="Você acertou!", font=("Arial Black", 20), fg="white", bg="black")
+			tentativa.config(text="Você acertou e salvou o Zezinho!", font=("Arial Black", 24), fg="white", bg="black")
 			entrada.config(state=tk.DISABLED)
+			palavra.config(text=f"A palavra era: {sorteioEscondido}", fg="purple", bg="black", font= ("Arial Bold", 22))
 
 		#Se letra não corresponder:
 		if chute not in sorteio:
@@ -73,8 +74,9 @@ def abrirJogoCores():
 		
 		#Se acabar as tentativas:
 		if contador <= 0:
-			tentativa.config(text="Você perdeu!", font=("Arial Black", 20), fg="white", bg="black")
+			tentativa.config(text="Você perdeu e matou o zezinho!", font=("Arial Black", 24), fg="white", bg="black")
 			entrada.config(state=tk.DISABLED)
+			palavra.config(text=f"A palavra era: {sorteio}", fg="purple", bg="black", font= ("Arial Bold", 22))
 
 		#Mudar imagens
 		if contador == 5:
@@ -113,7 +115,7 @@ def abrirJogoCores():
 	palavra=tk.Label(janela2,text=sorteioEscondido, fg="purple", bg="black", font= ("Arial Black", 30))
 	palavra.place(relx=0.5, rely=0.45, anchor="center")
 
-	#Onde ficam as letras erradas
+	#Onde ficam as letras erradas:
 	letras=tk.Label(janela2, text="Letras erradas:", fg="white", bg="black", font=("Arial", 14))
 	letras.place(relx=0.5, rely=0.7, anchor="center")
 
