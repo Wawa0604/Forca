@@ -43,7 +43,7 @@ def abrirJogoCores():
 	cor = ["azul", "purpura", "turquesa", "cinza", "amarelo", "marinho", "ouro", "prata", "bronze", "coral", "vermelho", "laranja", "marrom", "roxo", "verde", "preto", "rosa", "branco"]
 	sorteio = random.choice(cor)
 	sorteioEscondido = '_' * len(sorteio)
-	contador=10
+	contador=6
 
     # Função para processar o chute
 	def chutarLetra():
@@ -64,8 +64,7 @@ def abrirJogoCores():
 		#Se acertar:
 		if sorteioEscondido==sorteio:
 			tentativa.config(text="Você acertou!", font=("Arial Black", 20), fg="white", bg="black")
-			tentativa.delete(0,tk.END) #nao ta funcionando, era pra parar as tentativas
-			entrada.delete(0,tk.END)   #nao sei se ta funcionando, era pra parar a entrada
+			entrada.config(state=tk.DISABLED)
 
 		#Se letra não corresponder:
 		if chute not in sorteio:
@@ -73,12 +72,36 @@ def abrirJogoCores():
 			tentativa.config(text=f"Você tem {contador} chances de errar a letra")
 		
 		#Se acabar as tentativas:
-		if contador == 0:
+		if contador <= 0:
 			tentativa.config(text="Você perdeu!", font=("Arial Black", 20), fg="white", bg="black")
-			tentativa.delete(0,tk.END) #nao ta funcionando, era pra parar as tentativas
-			entrada.delete(0,tk.END)  #nao sei se ta funcionando, era pra parar a entrada
+			entrada.config(state=tk.DISABLED)
 
-	
+		#Mudar imagens
+		if contador == 5:
+			imagemForca.config= tk.PhotoImage(file="imagens/2.png")   #qual é a imagem
+			imagem = tk.Label(janela2, width=150, height=150, bg="white", image=imagemForca.config)  #definindo tamanho e cor
+			imagem.place(relx=0.1, rely=0.5, anchor="center") #reposicionamento da imagem na tela
+		if contador == 4:
+			imagemForca.config= tk.PhotoImage(file="imagens/3.png")   #qual é a imagem
+			imagem = tk.Label(janela2, width=150, height=150, bg="white", image=imagemForca.config)  #definindo tamanho e cor
+			imagem.place(relx=0.1, rely=0.5, anchor="center") #reposicionamento da imagem na tela
+		if contador == 3:
+			imagemForca.config= tk.PhotoImage(file="imagens/4.png")   #qual é a imagem
+			imagem = tk.Label(janela2, width=150, height=150, bg="white", image=imagemForca.config)  #definindo tamanho e cor
+			imagem.place(relx=0.1, rely=0.5, anchor="center") #reposicionamento da imagem na tela			
+		if contador == 2:
+			imagemForca.config= tk.PhotoImage(file="imagens/5.png")   #qual é a imagem
+			imagem = tk.Label(janela2, width=150, height=150, bg="white", image=imagemForca.config)  #definindo tamanho e cor
+			imagem.place(relx=0.1, rely=0.5, anchor="center") #reposicionamento da imagem na tela
+		if contador == 1:
+			imagemForca.config= tk.PhotoImage(file="imagens/6.png")   #qual é a imagem
+			imagem = tk.Label(janela2, width=150, height=150, bg="white", image=imagemForca.config)  #definindo tamanho e cor
+			imagem.place(relx=0.1, rely=0.5, anchor="center") #reposicionamento da imagem na tela
+		if contador == 0:
+			imagemForca.config= tk.PhotoImage(file="imagens/7.png")   #qual é a imagem
+			imagem = tk.Label(janela2, width=150, height=150, bg="white", image=imagemForca.config)  #definindo tamanho e cor
+			imagem.place(relx=0.1, rely=0.5, anchor="center") #reposicionamento da imagem na tela
+
     #Textos e orientações:
 	textoInicial = tk.Label(janela2, text="Consegue adivinhar a cor?" , fg="purple" , bg="black" , font= ("Arial Black" , 20))
 	textoInicial.place(relx=0.5,rely=0.08, anchor="center")
@@ -94,7 +117,7 @@ def abrirJogoCores():
 	letras.place(relx=0.5, rely=0.7, anchor="center")
 
 	#Onde conta as tentativas:
-	tentativa=tk.Label(janela2, text="Você tem 10 chances de errar a letra", font=("Arial Bold", 16), fg="white", bg="black")
+	tentativa=tk.Label(janela2, text="Você tem 6 chances de errar a letra", font=("Arial Bold", 16), fg="white", bg="black")
 	tentativa.place(relx=0.5,rely=0.3,anchor="center")
 	
     #Botoes e entrada:
@@ -106,6 +129,11 @@ def abrirJogoCores():
 	
 	entrada=tk.Entry(janela2, width=4, font=("Arial", 25))
 	entrada.place(relx=0.5, rely=0.6, anchor="center")
+
+	#Imagem Forca
+	imagemForca = tk.PhotoImage(file="imagens/1.png")   #qual é a imagem
+	imagem = tk.Label(janela2, width=150, height=150, bg="white", image=imagemForca)  #definindo tamanho e cor
+	imagem.place(relx=0.1, rely=0.5, anchor="center") #reposicionamento da imagem na tela
 	
 	
 #Janela de FRUTAS
