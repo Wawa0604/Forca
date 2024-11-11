@@ -41,6 +41,7 @@ def abrirJogoCores():
 
 	#Sortear palavra
 	cor = ["azul", "purpura", "turquesa", "cinza", "amarelo", "marinho", "ouro", "prata", "bronze", "coral", "vermelho", "laranja", "marrom", "roxo", "verde", "preto", "rosa", "branco"]
+	#cor = open ('cores.txt')
 	sorteio = random.choice(cor)
 	sorteioEscondido = '_' * len(sorteio)
 	contador=10
@@ -118,7 +119,7 @@ def abrirJogoFrutas():
 	janela3.iconbitmap("favicon.ico")
 
 	#Sortear palavra
-	cor = open ('cores.txt')
+	cor = open ('frutas.txt')
 	sorteio = random.choice(cor)
 	sorteioEscondido = '_ ' * len(sorteio)
 
