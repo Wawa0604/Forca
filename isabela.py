@@ -44,11 +44,11 @@ def abrirJogoCores():
 	sorteio = random.choice(cor)
 	sorteioEscondido = '_' * len(sorteio)
 	contador=10 
-	letrasErradas = []
+	letras = []
 
     # Função para processar o chute
 	def chutarLetra():
-		nonlocal sorteioEscondido, contador, letrasErradas, letras  #nonlocal serve pra pegar variavel que ta fora da função
+		nonlocal sorteioEscondido, contador, letras  #nonlocal serve pra pegar variavel que ta fora da função
 		chute = entrada.get().lower()
 		novaLetra = list(sorteioEscondido)
 
@@ -72,8 +72,8 @@ def abrirJogoCores():
 		if chute not in sorteio:
 			contador -=1
 			tentativa.config(text=f"Você tem {contador} chances de errar a letra")
-			letrasErradas.insert (1, chute)
-			
+			letras.append (chute)
+			letras_label.config(text=f"Letras erradas: {' '.join(letras)}")
 		
 		#Se acabar as tentativas:
 		if contador == 0:
@@ -93,8 +93,8 @@ def abrirJogoCores():
 	palavra.place(relx=0.5, rely=0.45, anchor="center")
 
 	#Onde ficam as letras erradas
-	letras=tk.Label(janela2, text= f"Letras erradas: {letrasErradas}",  fg="white", bg="black", font=("Arial", 14))
-	letras.place(relx=0.5, rely=0.7, anchor="center")
+	letras_label = tk.Label(janela2, text=f"Letras erradas: ", fg="white", bg="black", font=("Arial", 14))
+	letras_label.place(relx=0.5, rely=0.7, anchor="center")
 
 	#Onde conta as tentativas:
 	tentativa=tk.Label(janela2, text="Você tem 10 chances de errar a letra", font=("Arial Bold", 16), fg="white", bg="black")
