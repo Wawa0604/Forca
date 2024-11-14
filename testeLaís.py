@@ -57,7 +57,7 @@ def abrirJogoCores():
     	#print (lista)
 
 	#Sortear palavra
-	sorteio = random.choice(cor)
+	sorteio = random.choice(cor).strip()
 	sorteioEscondido = '_' * len(sorteio)
 	contador=10
 
@@ -134,7 +134,7 @@ def abrirJogoFrutas():
 	janela3.iconbitmap("favicon.ico")
 
 	#Sortear palavra
-	sorteio = random.choice(frutas)
+	sorteio = random.choice(frutas).strip()
 	sorteioEscondido = '_ ' * len(sorteio)
 
 	#Area do resultado final
@@ -176,7 +176,7 @@ def abrirJogoObjetos():
 	janela4.iconbitmap("favicon.ico")
 
 	#Sortear palavra
-	sorteio = random.choice(objetos)
+	sorteio = random.choice(objetos).strip()
 	sorteioEscondido = '_ ' * len(sorteio)
 
 	#Area do resultado final
