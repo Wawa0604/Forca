@@ -78,7 +78,6 @@ def abrirJogoCores():
 		if sorteioEscondido==sorteio:
 			tentativa.config(text="Você acertou e salvou o Zezinho!", font=("Arial Black", 24), fg="white", bg="black")
 			entrada.config(state=tk.DISABLED)
-			palavra.config(text=f"A palavra era: {sorteioEscondido}", fg="purple", bg="black", font= ("Arial Bold", 22))
 
 		#Se letra não corresponder:
 		if chute not in sorteio:
@@ -91,33 +90,34 @@ def abrirJogoCores():
 		if contador <= 0:
 			tentativa.config(text="Você perdeu e matou o zezinho!", font=("Arial Black", 24), fg="white", bg="black")
 			entrada.config(state=tk.DISABLED)
-			palavra.config(text=f"A palavra era: {sorteio}", fg="purple", bg="black", font= ("Arial Bold", 22))
+			palavra.config(text=f"Era: {sorteio}", fg="purple", bg="black", font= ("Arial Bold", 22))
+	
 
 		#Mudar imagens
 		if contador == 5:
 			imagemForca.config= tk.PhotoImage(file="imagens/2.png")   #qual é a imagem
-			imagem = tk.Label(janela2, width=150, height=150, bg="white", image=imagemForca.config)  #definindo tamanho e cor
-			imagem.place(relx=0.1, rely=0.5, anchor="center") #reposicionamento da imagem na tela
+			imagem = tk.Label(janela2, width=200, height=200, bg="white", image=imagemForca.config)  #definindo tamanho e cor
+			imagem.place(relx=0.4, rely=0.52, anchor="center") #reposicionamento da imagem na tela
 		if contador == 4:
 			imagemForca.config= tk.PhotoImage(file="imagens/3.png")   #qual é a imagem
-			imagem = tk.Label(janela2, width=150, height=150, bg="white", image=imagemForca.config)  #definindo tamanho e cor
-			imagem.place(relx=0.1, rely=0.5, anchor="center") #reposicionamento da imagem na tela
+			imagem = tk.Label(janela2, width=200, height=200, bg="white", image=imagemForca.config)  #definindo tamanho e cor
+			imagem.place(relx=0.4, rely=0.52, anchor="center") #reposicionamento da imagem na tela
 		if contador == 3:
 			imagemForca.config= tk.PhotoImage(file="imagens/4.png")   #qual é a imagem
-			imagem = tk.Label(janela2, width=150, height=150, bg="white", image=imagemForca.config)  #definindo tamanho e cor
-			imagem.place(relx=0.1, rely=0.5, anchor="center") #reposicionamento da imagem na tela			
+			imagem = tk.Label(janela2, width=200, height=200, bg="white", image=imagemForca.config)  #definindo tamanho e cor
+			imagem.place(relx=0.4, rely=0.52, anchor="center") #reposicionamento da imagem na tela			
 		if contador == 2:
 			imagemForca.config= tk.PhotoImage(file="imagens/5.png")   #qual é a imagem
-			imagem = tk.Label(janela2, width=150, height=150, bg="white", image=imagemForca.config)  #definindo tamanho e cor
-			imagem.place(relx=0.1, rely=0.5, anchor="center") #reposicionamento da imagem na tela
+			imagem = tk.Label(janela2, width=200, height=200, bg="white", image=imagemForca.config)  #definindo tamanho e cor
+			imagem.place(relx=0.4, rely=0.52, anchor="center") #reposicionamento da imagem na tela
 		if contador == 1:
 			imagemForca.config= tk.PhotoImage(file="imagens/6.png")   #qual é a imagem
-			imagem = tk.Label(janela2, width=150, height=150, bg="white", image=imagemForca.config)  #definindo tamanho e cor
-			imagem.place(relx=0.1, rely=0.5, anchor="center") #reposicionamento da imagem na tela
+			imagem = tk.Label(janela2, width=200, height=200, bg="white", image=imagemForca.config)  #definindo tamanho e cor
+			imagem.place(relx=0.4, rely=0.52, anchor="center") #reposicionamento da imagem na tela
 		if contador == 0:
 			imagemForca.config= tk.PhotoImage(file="imagens/7.png")   #qual é a imagem
-			imagem = tk.Label(janela2, width=150, height=150, bg="white", image=imagemForca.config)  #definindo tamanho e cor
-			imagem.place(relx=0.1, rely=0.5, anchor="center") #reposicionamento da imagem na tela
+			imagem = tk.Label(janela2, width=200, height=200, bg="white", image=imagemForca.config)  #definindo tamanho e cor
+			imagem.place(relx=0.4, rely=0.52, anchor="center") #reposicionamento da imagem na tela
 
     #Textos e orientações:
 	textoInicial = tk.Label(janela2, text="Consegue adivinhar a cor?" , fg="purple" , bg="black" , font= ("Arial Black" , 20))
@@ -128,30 +128,30 @@ def abrirJogoCores():
 	
 	#Lacunas para a palavra:
 	palavra=tk.Label(janela2,text=sorteioEscondido, fg="purple", bg="black", font= ("Arial Black", 30))
-	palavra.place(relx=0.5, rely=0.45, anchor="center")
+	palavra.place(relx=0.6, rely=0.45, anchor="center")
 
 	#Onde ficam as letras erradas:
 	letras_label = tk.Label(janela2, text=f"Letras erradas: ", fg="white", bg="black", font=("Arial", 14))
-	letras_label.place(relx=0.5, rely=0.7, anchor="center")
+	letras_label.place(relx=0.5, rely=0.75, anchor="center")
 
 	#Onde conta as tentativas:
 	tentativa=tk.Label(janela2, text="Você tem 6 chances de errar a letra", font=("Arial Bold", 16), fg="white", bg="black")
-	tentativa.place(relx=0.5,rely=0.3,anchor="center")
+	tentativa.place(relx=0.5,rely=0.28,anchor="center")
 	
     #Botoes e entrada:
 	botao_voltar = tk.Button(janela2, text = 'Voltar para a tela inicial', command = janela2.destroy, font=("Arial",10))
 	botao_voltar.place(relx=0.5, rely=0.9, anchor="center")
 	
 	botaoChutar=tk.Button(janela2, text="Chutar", bg="purple", fg="white", font=("Arial", 16), command=chutarLetra)
-	botaoChutar.place(relx=0.6,rely=0.6, anchor="center")
+	botaoChutar.place(relx=0.65,rely=0.6, anchor="center")
 	
 	entrada=tk.Entry(janela2, width=4, font=("Arial", 25))
-	entrada.place(relx=0.5, rely=0.6, anchor="center")
+	entrada.place(relx=0.55, rely=0.6, anchor="center")
 
 	#Imagem Forca
 	imagemForca = tk.PhotoImage(file="imagens/1.png")   #qual é a imagem
-	imagem = tk.Label(janela2, width=150, height=150, bg="white", image=imagemForca)  #definindo tamanho e cor
-	imagem.place(relx=0.1, rely=0.5, anchor="center") #reposicionamento da imagem na tela
+	imagem = tk.Label(janela2, width=200, height=200, bg="white", image=imagemForca)  #definindo tamanho e cor
+	imagem.place(relx=0.4, rely=0.52, anchor="center") #reposicionamento da imagem na tela
 	
 	
 #Janela de FRUTAS
@@ -189,7 +189,6 @@ def abrirJogoFrutas():
 		if sorteioEscondido==sorteio:
 			tentativa.config(text="Você acertou e salvou o Alex!", font=("Arial Black", 24), fg="white", bg="black")
 			entrada.config(state=tk.DISABLED)
-			palavra.config(text=f"A palavra era: {sorteioEscondido}", fg="purple", bg="black", font= ("Arial Bold", 22))
 
 		#Se letra não corresponder:
 		if chute not in sorteio:
@@ -202,33 +201,33 @@ def abrirJogoFrutas():
 		if contador <= 0:
 			tentativa.config(text="Você perdeu e matou o Alex!", font=("Arial Black", 24), fg="white", bg="black")
 			entrada.config(state=tk.DISABLED)
-			palavra.config(text=f"A palavra era: {sorteio}", fg="purple", bg="black", font= ("Arial Bold", 22))
+			palavra.config(text=f"Era: {sorteio}", fg="purple", bg="black", font= ("Arial Bold", 22))
 
 		#Mudar imagens
 		if contador == 5:
 			imagemForca.config= tk.PhotoImage(file="imagens/2.png")   #qual é a imagem
-			imagem = tk.Label(janela3, width=150, height=150, bg="white", image=imagemForca.config)  #definindo tamanho e cor
-			imagem.place(relx=0.1, rely=0.5, anchor="center") #reposicionamento da imagem na tela
+			imagem = tk.Label(janela3, width=200, height=200, bg="white", image=imagemForca.config)  #definindo tamanho e cor
+			imagem.place(relx=0.4, rely=0.52, anchor="center") #reposicionamento da imagem na tela
 		if contador == 4:
 			imagemForca.config= tk.PhotoImage(file="imagens/3.png")   #qual é a imagem
-			imagem = tk.Label(janela3, width=150, height=150, bg="white", image=imagemForca.config)  #definindo tamanho e cor
-			imagem.place(relx=0.1, rely=0.5, anchor="center") #reposicionamento da imagem na tela
+			imagem = tk.Label(janela3, width=200, height=200, bg="white", image=imagemForca.config)  #definindo tamanho e cor
+			imagem.place(relx=0.4, rely=0.52, anchor="center") #reposicionamento da imagem na tela
 		if contador == 3:
 			imagemForca.config= tk.PhotoImage(file="imagens/4.png")   #qual é a imagem
-			imagem = tk.Label(janela3, width=150, height=150, bg="white", image=imagemForca.config)  #definindo tamanho e cor
-			imagem.place(relx=0.1, rely=0.5, anchor="center") #reposicionamento da imagem na tela			
+			imagem = tk.Label(janela3, width=200, height=200, bg="white", image=imagemForca.config)  #definindo tamanho e cor
+			imagem.place(relx=0.4, rely=0.52, anchor="center") #reposicionamento da imagem na tela			
 		if contador == 2:
 			imagemForca.config= tk.PhotoImage(file="imagens/5.png")   #qual é a imagem
-			imagem = tk.Label(janela3, width=150, height=150, bg="white", image=imagemForca.config)  #definindo tamanho e cor
-			imagem.place(relx=0.1, rely=0.5, anchor="center") #reposicionamento da imagem na tela
+			imagem = tk.Label(janela3, width=200, height=200, bg="white", image=imagemForca.config)  #definindo tamanho e cor
+			imagem.place(relx=0.4, rely=0.52, anchor="center") #reposicionamento da imagem na tela
 		if contador == 1:
 			imagemForca.config= tk.PhotoImage(file="imagens/6.png")   #qual é a imagem
-			imagem = tk.Label(janela3, width=150, height=150, bg="white", image=imagemForca.config)  #definindo tamanho e cor
-			imagem.place(relx=0.1, rely=0.5, anchor="center") #reposicionamento da imagem na tela
+			imagem = tk.Label(janela3, width=200, height=200, bg="white", image=imagemForca.config)  #definindo tamanho e cor
+			imagem.place(relx=0.4, rely=0.52, anchor="center") #reposicionamento da imagem na tela
 		if contador == 0:
 			imagemForca.config= tk.PhotoImage(file="imagens/7.png")   #qual é a imagem
-			imagem = tk.Label(janela3, width=150, height=150, bg="white", image=imagemForca.config)  #definindo tamanho e cor
-			imagem.place(relx=0.1, rely=0.5, anchor="center") #reposicionamento da imagem na tela
+			imagem = tk.Label(janela3, width=200, height=200, bg="white", image=imagemForca.config)  #definindo tamanho e cor
+			imagem.place(relx=0.4, rely=0.52, anchor="center") #reposicionamento da imagem na tela
 
     #Textos e orientações:
 	textoInicial = tk.Label(janela3, text="Consegue adivinhar a fruta?" , fg="purple" , bg="black" , font= ("Arial Black" , 20))
@@ -239,30 +238,30 @@ def abrirJogoFrutas():
 	
 	#Lacunas para a palavra:
 	palavra=tk.Label(janela3,text=sorteioEscondido, fg="purple", bg="black", font= ("Arial Black", 30))
-	palavra.place(relx=0.5, rely=0.45, anchor="center")
+	palavra.place(relx=0.6, rely=0.45, anchor="center")
 
 	#Onde ficam as letras erradas:
 	letras_label = tk.Label(janela3, text=f"Letras erradas: ", fg="white", bg="black", font=("Arial", 14))
-	letras_label.place(relx=0.5, rely=0.7, anchor="center")
+	letras_label.place(relx=0.5, rely=0.75, anchor="center")
 
 	#Onde conta as tentativas:
 	tentativa=tk.Label(janela3, text="Você tem 6 chances de errar a letra", font=("Arial Bold", 16), fg="white", bg="black")
-	tentativa.place(relx=0.5,rely=0.3,anchor="center")
+	tentativa.place(relx=0.5,rely=0.28,anchor="center")
 	
     #Botoes e entrada:
 	botao_voltar = tk.Button(janela3, text = 'Voltar para a tela inicial', command = janela3.destroy, font=("Arial",10))
 	botao_voltar.place(relx=0.5, rely=0.9, anchor="center")
 	
 	botaoChutar=tk.Button(janela3, text="Chutar", bg="purple", fg="white", font=("Arial", 16), command=chutarLetra)
-	botaoChutar.place(relx=0.6,rely=0.6, anchor="center")
+	botaoChutar.place(relx=0.65,rely=0.6, anchor="center")
 	
 	entrada=tk.Entry(janela3, width=4, font=("Arial", 25))
-	entrada.place(relx=0.5, rely=0.6, anchor="center")
+	entrada.place(relx=0.55, rely=0.6, anchor="center")
 
 	#Imagem Forca
 	imagemForca = tk.PhotoImage(file="imagens/1.png")   #qual é a imagem
-	imagem = tk.Label(janela3, width=150, height=150, bg="white", image=imagemForca)  #definindo tamanho e cor
-	imagem.place(relx=0.1, rely=0.5, anchor="center") #reposicionamento da imagem na tela
+	imagem = tk.Label(janela3, width=200, height=200, bg="white", image=imagemForca)  #definindo tamanho e cor
+	imagem.place(relx=0.4, rely=0.52, anchor="center") #reposicionamento da imagem na tela
 
 #Janela de OBJETOS
 def abrirJogoObjetos():
@@ -299,7 +298,6 @@ def abrirJogoObjetos():
 		if sorteioEscondido==sorteio:
 			tentativa.config(text="Você acertou e salvou o Alex!", font=("Arial Black", 24), fg="white", bg="black")
 			entrada.config(state=tk.DISABLED)
-			palavra.config(text=f"A palavra era: {sorteioEscondido}", fg="purple", bg="black", font= ("Arial Bold", 22))
 
 		#Se letra não corresponder:
 		if chute not in sorteio:
@@ -312,33 +310,33 @@ def abrirJogoObjetos():
 		if contador <= 0:
 			tentativa.config(text="Você perdeu e matou o Alex!", font=("Arial Black", 24), fg="white", bg="black")
 			entrada.config(state=tk.DISABLED)
-			palavra.config(text=f"A palavra era: {sorteio}", fg="purple", bg="black", font= ("Arial Bold", 22))
+			palavra.config(text=f"Era: {sorteio}", fg="purple", bg="black", font= ("Arial Bold", 22))
 
 		#Mudar imagens
 		if contador == 5:
 			imagemForca.config= tk.PhotoImage(file="imagens/2.png")   #qual é a imagem
-			imagem = tk.Label(janela4, width=150, height=150, bg="white", image=imagemForca.config)  #definindo tamanho e cor
-			imagem.place(relx=0.1, rely=0.5, anchor="center") #reposicionamento da imagem na tela
+			imagem = tk.Label(janela4, width=200, height=200, bg="white", image=imagemForca.config)  #definindo tamanho e cor
+			imagem.place(relx=0.4, rely=0.52, anchor="center") #reposicionamento da imagem na tela
 		if contador == 4:
 			imagemForca.config= tk.PhotoImage(file="imagens/3.png")   #qual é a imagem
-			imagem = tk.Label(janela4, width=150, height=150, bg="white", image=imagemForca.config)  #definindo tamanho e cor
-			imagem.place(relx=0.1, rely=0.5, anchor="center") #reposicionamento da imagem na tela
+			imagem = tk.Label(janela4, width=200, height=200, bg="white", image=imagemForca.config)  #definindo tamanho e cor
+			imagem.place(relx=0.4, rely=0.52, anchor="center") #reposicionamento da imagem na tela
 		if contador == 3:
 			imagemForca.config= tk.PhotoImage(file="imagens/4.png")   #qual é a imagem
-			imagem = tk.Label(janela4, width=150, height=150, bg="white", image=imagemForca.config)  #definindo tamanho e cor
-			imagem.place(relx=0.1, rely=0.5, anchor="center") #reposicionamento da imagem na tela			
+			imagem = tk.Label(janela4, width=200, height=200, bg="white", image=imagemForca.config)  #definindo tamanho e cor
+			imagem.place(relx=0.4, rely=0.52, anchor="center") #reposicionamento da imagem na tela			
 		if contador == 2:
 			imagemForca.config= tk.PhotoImage(file="imagens/5.png")   #qual é a imagem
-			imagem = tk.Label(janela4, width=150, height=150, bg="white", image=imagemForca.config)  #definindo tamanho e cor
-			imagem.place(relx=0.1, rely=0.5, anchor="center") #reposicionamento da imagem na tela
+			imagem = tk.Label(janela4, width=200, height=200, bg="white", image=imagemForca.config)  #definindo tamanho e cor
+			imagem.place(relx=0.4, rely=0.52, anchor="center") #reposicionamento da imagem na tela
 		if contador == 1:
 			imagemForca.config= tk.PhotoImage(file="imagens/6.png")   #qual é a imagem
-			imagem = tk.Label(janela4, width=150, height=150, bg="white", image=imagemForca.config)  #definindo tamanho e cor
-			imagem.place(relx=0.1, rely=0.5, anchor="center") #reposicionamento da imagem na tela
+			imagem = tk.Label(janela4, width=200, height=200, bg="white", image=imagemForca.config)  #definindo tamanho e cor
+			imagem.place(relx=0.4, rely=0.52, anchor="center") #reposicionamento da imagem na tela
 		if contador == 0:
 			imagemForca.config= tk.PhotoImage(file="imagens/7.png")   #qual é a imagem
-			imagem = tk.Label(janela4, width=150, height=150, bg="white", image=imagemForca.config)  #definindo tamanho e cor
-			imagem.place(relx=0.1, rely=0.5, anchor="center") #reposicionamento da imagem na tela
+			imagem = tk.Label(janela4, width=200, height=200, bg="white", image=imagemForca.config)  #definindo tamanho e cor
+			imagem.place(relx=0.4, rely=0.52, anchor="center") #reposicionamento da imagem na tela
 
     #Textos e orientações:
 	textoInicial = tk.Label(janela4, text="Consegue adivinhar o objeto?" , fg="purple" , bg="black" , font= ("Arial Black" , 20))
@@ -349,29 +347,29 @@ def abrirJogoObjetos():
 	
 	#Lacunas para a palavra:
 	palavra=tk.Label(janela4,text=sorteioEscondido, fg="purple", bg="black", font= ("Arial Black", 30))
-	palavra.place(relx=0.5, rely=0.45, anchor="center")
+	palavra.place(relx=0.6, rely=0.45, anchor="center")
 
 	#Onde ficam as letras erradas:
 	letras_label = tk.Label(janela4, text=f"Letras erradas: ", fg="white", bg="black", font=("Arial", 14))
-	letras_label.place(relx=0.5, rely=0.7, anchor="center")
+	letras_label.place(relx=0.5, rely=0.75, anchor="center")
 	#Onde conta as tentativas:
 	tentativa=tk.Label(janela4, text="Você tem 6 chances de errar a letra", font=("Arial Bold", 16), fg="white", bg="black")
-	tentativa.place(relx=0.5,rely=0.3,anchor="center")
+	tentativa.place(relx=0.5,rely=0.28,anchor="center")
 	
     #Botoes e entrada:
 	botao_voltar = tk.Button(janela4, text = 'Voltar para a tela inicial', command = janela4.destroy, font=("Arial",10))
 	botao_voltar.place(relx=0.5, rely=0.9, anchor="center")
 	
 	botaoChutar=tk.Button(janela4, text="Chutar", bg="purple", fg="white", font=("Arial", 16), command=chutarLetra)
-	botaoChutar.place(relx=0.6,rely=0.6, anchor="center")
+	botaoChutar.place(relx=0.65,rely=0.6, anchor="center")
 	
 	entrada=tk.Entry(janela4, width=4, font=("Arial", 25))
-	entrada.place(relx=0.5, rely=0.6, anchor="center")
+	entrada.place(relx=0.55, rely=0.6, anchor="center")
 
 	#Imagem Forca
 	imagemForca = tk.PhotoImage(file="imagens/1.png")   #qual é a imagem
-	imagem = tk.Label(janela4, width=150, height=150, bg="white", image=imagemForca)  #definindo tamanho e cor
-	imagem.place(relx=0.1, rely=0.5, anchor="center") #reposicionamento da imagem na tela
+	imagem = tk.Label(janela4, width=200, height=200, bg="white", image=imagemForca)  #definindo tamanho e cor
+	imagem.place(relx=0.4, rely=0.52, anchor="center") #reposicionamento da imagem na tela
 
 #Botões para iniciar o jogo - baseado no tema escolhido - PAGINA INICIAL
 botIniciar1= tk.Button(janela, text="Cores" , font=("Arial Bold", 14), width=12, height=1, bg="purple", fg="white", command=abrirJogoCores)
